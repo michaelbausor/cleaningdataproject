@@ -9,8 +9,6 @@ This project contains the following files:
 
 ## Analysis details
 
-The variables used in the analysis of the data are:
-
 The analysis performed in run_analysis.R proceeds by unzipping and loading the data into the variables:
 - X_train: all features, with samples from the training set
 - y_train: the activity classification, with samples from the training set
