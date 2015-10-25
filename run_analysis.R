@@ -1,3 +1,4 @@
+unzip("getdata-projectfiles-UCI HAR Dataset.zip")
 X_train<-read.table('UCI HAR Dataset/train/X_train.txt')
 y_train<-read.table('UCI HAR Dataset/train/Y_train.txt')
 subj_train<-read.table('UCI HAR Dataset/train/subject_train.txt')

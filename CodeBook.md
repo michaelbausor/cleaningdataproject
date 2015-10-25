@@ -1,27 +1,112 @@
 # CodeBook
-This file describes the variables used in the analysis of data for the class project of the Coursera Getting and Cleaning Data Project
+This file describes the dataset produced for the class project of the Coursera Getting and Cleaning Data Project
 
-The data used were recorded using Samsung Galaxy S smartphones, and are available at this URL:
+This file reproduces some of the information provided with the original data set, and augments it with information about the additional processing performed to create the final data set.
+
+The original data are available at this URL:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-The variables used in the analysis of the data are:
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
-- X_train: all features, with samples from the training set
-- y_train: the activity classification, with samples from the training set
-- subj_train: the subject id, with samples from the training set
-- X_test: all features, with samples from the test set
-- y_test: the activity classification, with samples from the test set
-- subj_test: the subject id, with samples from the test set
-- X: all features, with samples from training and test combined
-- y: the activity classification, with samples from training and test combined
-- subj: the subject id, with samples from training and test combined
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 
-- features: table of feature IDs and feature names
-- mean_features: features relating to mean of a measurement
-- std_features: features relating to standard deviation of a measurement
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
 
-- comb_features: mean and standard deviation features combined
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-- X_reduced: data for mean and standard deviation features, with samples from training and test combined
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
 
-- X_means: summary data, containing the mean of features contained in X_reduced
+In the original data set, many variables were estimated from these signals. However, these were reduced to only the following:
+
+mean(): Mean value
+std(): Standard deviation
+
+The data from both the training set and the test set were combined together into a single data set. The data for each variable was then aggregated by activity and subject, and the mean was calculated. This reduced the dataset to 180 observations.
+
+The final list of features included in the data set is:
+
+ $ subject        
+ $ activity           
+ $ tBodyAcc-mean()-X        
+ $ tBodyAcc-mean()-Y    
+ $ tBodyAcc-mean()-Z    
+ $ tBodyAcc-std()-X        
+ $ tBodyAcc-std()-Y        
+ $ tBodyAcc-std()-Z         
+ $ tGravityAcc-mean()-X   
+ $ tGravityAcc-mean()-Y   
+ $ tGravityAcc-mean()-Z    
+ $ tGravityAcc-std()-X        
+ $ tGravityAcc-std()-Y        
+ $ tGravityAcc-std()-Z        
+ $ tBodyAccJerk-mean()-X 
+ $ tBodyAccJerk-mean()-Y 
+ $ tBodyAccJerk-mean()-Z  
+ $ tBodyAccJerk-std()-X       
+ $ tBodyAccJerk-std()-Y       
+ $ tBodyAccJerk-std()-Z       
+ $ tBodyGyro-mean()-X         
+ $ tBodyGyro-mean()-Y         
+ $ tBodyGyro-mean()-Z         
+ $ tBodyGyro-std()-X          
+ $ tBodyGyro-std()-Y          
+ $ tBodyGyro-std()-Z          
+ $ tBodyGyroJerk-mean()-X     
+ $ tBodyGyroJerk-mean()-Y     
+ $ tBodyGyroJerk-mean()-Z     
+ $ tBodyGyroJerk-std()-X      
+ $ tBodyGyroJerk-std()-Y      
+ $ tBodyGyroJerk-std()-Z      
+ $ tBodyAccMag-mean()         
+ $ tBodyAccMag-std()          
+ $ tGravityAccMag-mean()      
+ $ tGravityAccMag-std()       
+ $ tBodyAccJerkMag-mean()     
+ $ tBodyAccJerkMag-std()      
+ $ tBodyGyroMag-mean()        
+ $ tBodyGyroMag-std()         
+ $ tBodyGyroJerkMag-mean()    
+ $ tBodyGyroJerkMag-std()     
+ $ fBodyAcc-mean()-X          
+ $ fBodyAcc-mean()-Y          
+ $ fBodyAcc-mean()-Z          
+ $ fBodyAcc-std()-X           
+ $ fBodyAcc-std()-Y           
+ $ fBodyAcc-std()-Z           
+ $ fBodyAccJerk-mean()-X      
+ $ fBodyAccJerk-mean()-Y      
+ $ fBodyAccJerk-mean()-Z      
+ $ fBodyAccJerk-std()-X       
+ $ fBodyAccJerk-std()-Y       
+ $ fBodyAccJerk-std()-Z       
+ $ fBodyGyro-mean()-X         
+ $ fBodyGyro-mean()-Y         
+ $ fBodyGyro-mean()-Z         
+ $ fBodyGyro-std()-X          
+ $ fBodyGyro-std()-Y          
+ $ fBodyGyro-std()-Z          
+ $ fBodyAccMag-mean()         
+ $ fBodyAccMag-std()          
+ $ fBodyBodyAccJerkMag-mean() 
+ $ fBodyBodyAccJerkMag-std()  
+ $ fBodyBodyGyroMag-mean()    
+ $ fBodyBodyGyroMag-std()     
+ $ fBodyBodyGyroJerkMag-mean()
+ $ fBodyBodyGyroJerkMag-std() 
